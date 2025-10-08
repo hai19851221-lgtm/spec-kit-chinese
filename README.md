@@ -1,118 +1,243 @@
-# Spec-Kit 中文版 🇨🇳
+# 🇨🇳 Spec-Kit 中文汉化版
 
-> GitHub Spec-Kit 的完整中文汉化版本 | 规范驱动开发工具包
+<div align="center">
 
-[![GitHub](https://img.shields.io/badge/GitHub-spec--kit-blue)](https://github.com/github/spec-kit)
-[![Language](https://img.shields.io/badge/语言-中文-red)](README.md)
-[![Status](https://img.shields.io/badge/状态-稳定-green)](README.md)
+**GitHub 官方规范驱动开发工具包 · 完整中文汉化**
 
----
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Language: Chinese](https://img.shields.io/badge/语言-中文-red.svg)](README.md)
+[![AI Tool: Cursor](https://img.shields.io/badge/AI工具-Cursor-blue.svg)](https://cursor.sh)
+[![Based on: Spec-Kit](https://img.shields.io/badge/基于-GitHub%20Spec--Kit-green.svg)](https://github.com/github/spec-kit)
 
-## 📖 简介
+**[快速开始](#-快速开始)** | **[命令参考](#-命令参考)** | **[工作流程](#-工作流程)** | **[原版对比](#-汉化说明)**
 
-**Spec-Kit** 是 GitHub 开源的规范驱动开发工具包，与 Cursor 等 AI 编码工具深度集成，帮助开发者从需求到实现的全流程开发。
-
-**本项目特点**：
-- 🇨🇳 **完整中文化** - 所有命令和模板已汉化
-- 📋 **开头一句话** - 每个命令都有简洁的用途说明
-- 🚀 **开箱即用** - 克隆即可使用
-- 📚 **文档完善** - 详细的中文使用指南
+</div>
 
 ---
 
-## ✨ 核心功能
+## 📖 项目简介
 
-### 🎯 四阶段核心工作流
+**Spec-Kit 中文汉化版**是 GitHub 官方 Spec-Kit 工具的完整中文本地化版本，专为中文开发者优化。
 
-| 阶段 | 命令 | 用途 |
+### 💡 什么是 Spec-Kit？
+
+Spec-Kit 是 GitHub 开源的**规范驱动开发（Spec-Driven Development）**工具包，帮助你：
+
+```mermaid
+graph LR
+    A[💭 需求想法] --> B[📝 规范文档]
+    B --> C[🎯 实现计划]
+    C --> D[✅ 任务清单]
+    D --> E[⚙️ 代码实现]
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#fff3e0
+    style D fill:#e8f5e9
+    style E fill:#fce4ec
+```
+
+### ✨ 核心特性
+
+| 特性 | 说明 | 优势 |
 |------|------|------|
-| 1️⃣ | `/speckit.specify` | 将功能需求转化为清晰的规范文档 |
-| 2️⃣ | `/speckit.plan` | 制定功能的技术实现方案 |
-| 3️⃣ | `/speckit.tasks` | 将技术方案分解为可执行的任务清单 |
-| 4️⃣ | `/speckit.implement` | 按任务清单逐步实现功能代码 |
-
-### 🔧 辅助命令
-
-| 命令 | 用途 | 使用时机 |
-|------|------|---------|
-| `/speckit.constitution` | 定义项目的核心原则和开发规范 | 项目开始时（可选） |
-| `/speckit.clarify` | 解决规范中的模糊和歧义问题 | 规范化后（可选） |
-| `/speckit.analyze` | 检查规范、计划、任务的一致性 | 实现前（可选） |
-| `/speckit.checklist` | 生成需求质量验证清单 | 任何阶段 |
+| 🎯 **规范驱动** | 从需求到代码全流程文档化 | 减少返工，提高质量 |
+| 🤖 **AI 集成** | 深度集成 Cursor AI 编辑器 | 自动化文档生成 |
+| 🔄 **流程规范** | 标准化的开发工作流 | 团队协作更高效 |
+| 📚 **模板丰富** | 预置多种文档模板 | 开箱即用 |
+| 🇨🇳 **完整汉化** | 所有交互界面中文化 | 中文开发者友好 |
 
 ---
 
 ## 🚀 快速开始
 
-### 方式一：使用此模板创建新项目
+### 📋 前置要求
+
+<details>
+<summary><b>点击查看安装要求</b></summary>
+
+- ✅ **Python 3.10+** - Python 运行环境
+- ✅ **uv** - 现代 Python 包管理器
+- ✅ **Git** - 版本控制系统
+- ✅ **Cursor** - AI 代码编辑器（推荐）
+
+</details>
+
+### 🔧 安装步骤
+
+#### 方式一：使用模板创建（推荐）
 
 ```bash
-# 1. 在 GitHub 上点击 "Use this template" 创建新仓库
+# 1. 从 GitHub 模板创建新项目
+gh repo create my-project \
+  --template 888888888881/spec-kit-chinese \
+  --public
 
-# 2. 克隆您的新仓库
-git clone https://github.com/your-username/your-project.git
-cd your-project
+# 2. 克隆到本地
+git clone https://github.com/YOUR_USERNAME/my-project.git
+cd my-project
 
-# 3. 开始使用（在 Cursor 中）
-/speckit.specify
-开发一个用户注册功能...
+# 3. 安装 Spec-Kit
+uv tool install spec
 ```
 
-### 方式二：在现有项目中使用
+#### 方式二：直接克隆使用
 
 ```bash
-# 1. 确保已安装 Spec-Kit CLI
-uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
+# 1. 克隆仓库
+git clone https://github.com/888888888881/spec-kit-chinese.git
+cd spec-kit-chinese
 
-# 2. 在项目中初始化
-cd your-existing-project
+# 2. 安装工具
+uv tool install spec
+
+# 3. 初始化（如果需要）
 specify init --here --ai cursor --force
+```
 
-# 3. 复制中文化文件
-# 从本模板复制 .cursor/commands/ 和 .specify/templates/ 到您的项目
+### ✅ 验证安装
+
+```bash
+# 检查工具版本
+specify --help
+
+# 应显示中文化的帮助信息
 ```
 
 ---
 
-## 📚 使用示例
+## 🎯 核心工作流程
 
-### 完整开发流程
+### 📊 完整开发流程
+
+```mermaid
+graph TD
+    Start([🎬 开始]) --> Constitution[📜 制定项目宪章<br/>/speckit.constitution]
+    Constitution --> Specify[📝 编写功能规范<br/>/speckit.specify]
+    Specify --> Clarify{需要<br/>澄清?}
+    
+    Clarify -->|是| ClarifyCmd[❓ 澄清需求<br/>/speckit.clarify]
+    ClarifyCmd --> Specify
+    
+    Clarify -->|否| Plan[🎯 制定实现计划<br/>/speckit.plan]
+    Plan --> Tasks[✅ 生成任务清单<br/>/speckit.tasks]
+    
+    Tasks --> Analyze[🔍 质量分析<br/>/speckit.analyze]
+    Analyze --> AnalyzeOK{分析<br/>通过?}
+    
+    AnalyzeOK -->|否| Fix[🔧 修复问题]
+    Fix --> Tasks
+    
+    AnalyzeOK -->|是| Checklist[📋 生成检查清单<br/>/speckit.checklist]
+    Checklist --> Implement[⚙️ 执行实现<br/>/speckit.implement]
+    Implement --> End([🎉 完成])
+    
+    style Start fill:#e1f5fe
+    style Constitution fill:#f3e5f5
+    style Specify fill:#fff3e0
+    style Plan fill:#e8f5e9
+    style Tasks fill:#fce4ec
+    style Implement fill:#c8e6c9
+    style End fill:#ffeb3b
+```
+
+### 🛠️ 快速上手示例
+
+<details>
+<summary><b>点击查看完整示例</b></summary>
+
+#### 1️⃣ 制定项目宪章
 
 ```bash
-# 步骤 1：创建功能规范
-/speckit.specify
-开发一个待办事项管理功能。用户可以创建、查看、标记完成、删除待办事项。
+# 在 Cursor 中执行
+/speckit.constitution
 
-# 步骤 2：制定技术方案
+# 定义核心原则，如：
+# - 代码质量标准
+# - 文档规范
+# - 测试要求
+```
+
+#### 2️⃣ 创建功能规范
+
+```bash
+# 描述功能需求
+/speckit.specify 实现用户登录功能，支持邮箱和密码登录
+```
+
+#### 3️⃣ 澄清模糊需求（可选）
+
+```bash
+# 自动识别并澄清规范中的模糊点
+/speckit.clarify
+```
+
+#### 4️⃣ 制定实现计划
+
+```bash
+# 生成技术实现方案
 /speckit.plan
+```
 
-# 步骤 3：分解任务
+#### 5️⃣ 生成任务清单
+
+```bash
+# 将计划分解为可执行任务
 /speckit.tasks
+```
 
-# 步骤 4：开始实现
+#### 6️⃣ 质量分析
+
+```bash
+# 检查文档一致性
+/speckit.analyze
+```
+
+#### 7️⃣ 生成检查清单
+
+```bash
+# 创建验收标准
+/speckit.checklist
+```
+
+#### 8️⃣ 执行实现
+
+```bash
+# 按任务清单逐步实现
 /speckit.implement
 ```
 
-### 最小工作流（4步）
+</details>
 
-```
-指定 → 规划 → 任务 → 实现
-```
+---
 
-### 完整工作流（含质量检查）
+## 📚 命令参考
 
-```
-原则 → 指定 → 澄清 → 规划 → 任务 → 分析 → 实现
-```
+### 🎯 8 大核心命令
+
+| 命令 | 用途 | 输入 | 输出 |
+|------|------|------|------|
+| 📜 `/speckit.constitution` | 定义项目核心原则和开发规范 | 项目原则 | `constitution.md` |
+| 📝 `/speckit.specify` | 将功能需求转化为清晰规范 | 功能描述 | `spec.md` |
+| ❓ `/speckit.clarify` | 解决规范中的模糊和歧义 | 现有规范 | 更新的 `spec.md` |
+| 🎯 `/speckit.plan` | 制定功能的技术实现方案 | 规范文档 | `plan.md` |
+| ✅ `/speckit.tasks` | 将技术方案分解为任务清单 | 实现计划 | `tasks.md` |
+| ⚙️ `/speckit.implement` | 按任务清单逐步实现代码 | 任务清单 | 代码文件 |
+| 🔍 `/speckit.analyze` | 检查规范、计划、任务一致性 | 所有文档 | 分析报告 |
+| 📋 `/speckit.checklist` | 生成需求质量验证清单 | 功能规范 | 检查清单 |
+
+### 📖 详细文档
+
+查看 **[命令快速参考.md](./命令快速参考.md)** 了解每个命令的详细用法。
 
 ---
 
 ## 📁 项目结构
 
 ```
-.
-├── .cursor/
-│   └── commands/          # 8个汉化的命令文件
+spec-kit-chinese/
+├── 📂 .cursor/              # Cursor 编辑器配置
+│   └── commands/            # 8个中文命令定义
 │       ├── speckit.constitution.md
 │       ├── speckit.specify.md
 │       ├── speckit.clarify.md
@@ -122,109 +247,131 @@ specify init --here --ai cursor --force
 │       ├── speckit.analyze.md
 │       └── speckit.checklist.md
 │
-├── .specify/
-│   ├── memory/
-│   │   └── constitution.md    # 项目宪章模板
-│   ├── scripts/               # 自动化脚本
-│   └── templates/             # 5个汉化的文档模板
+├── 📂 .specify/             # Spec-Kit 核心文件
+│   ├── memory/              # 项目记忆
+│   │   └── constitution.md  # 项目宪章
+│   ├── templates/           # 中文模板
+│   │   ├── spec-template.md
+│   │   ├── plan-template.md
+│   │   ├── tasks-template.md
+│   │   ├── checklist-template.md
+│   │   └── agent-file-template.md
+│   └── scripts/             # Shell 脚本
 │
-├── README.md                  # 本文档
-└── 命令快速参考.md             # 命令速查表
+├── 📂 specs/                # 功能规范目录（自动生成）
+│
+├── 📄 README.md             # 项目说明（本文件）
+├── 📄 命令快速参考.md        # 命令速查表
+├── 📄 LICENSE               # MIT 许可证
+└── 📄 .gitignore            # Git 忽略规则
 ```
 
 ---
 
-## 🎯 汉化说明
+## 🌟 汉化说明
 
-本项目遵循以下汉化原则：
+### ✅ 已汉化内容
 
-✅ **已汉化**
-- 所有命令的 `description` 和执行说明
-- 所有模板的章节标题和注释
-- 每个命令开头的"命令用途"说明
+| 类别 | 内容 | 状态 |
+|------|------|------|
+| 🎯 **命令描述** | 8 个命令的 `description` 字段 | ✅ 完成 |
+| 📖 **命令文档** | `.cursor/commands/*.md` 内容 | ✅ 完成 |
+| 📝 **文档模板** | 5 个核心模板文件 | ✅ 完成 |
+| 📜 **项目宪章** | Constitution 模板 | ✅ 完成 |
+| 📚 **使用文档** | README 和快速参考 | ✅ 完成 |
 
-✅ **保持英文**
-- 命令文件名（如 `speckit.specify.md`）
-- 命令触发词（如 `/speckit.specify`）
-- 技术标识符（变量名、路径等）
+### ⚠️ 未汉化内容（保持英文原因）
 
-**原因**：确保工具稳定运行的同时提供最佳中文体验
+| 内容 | 原因 |
+|------|------|
+| 命令触发关键字 | 确保 AI 工具兼容性 |
+| 文件名和路径 | 避免跨平台编码问题 |
+| Shell 脚本 | 保证系统稳定性 |
+| Git 配置 | 遵循版本控制标准 |
 
----
+### 🎯 汉化原则
 
-## 💡 核心优势
+本项目遵循 **"客户交互优先，程序稳定为本"** 的原则：
 
-| 对比项 | 传统开发 | Spec-Kit |
-|--------|---------|----------|
-| 需求管理 | 口头沟通，易误解 | 结构化文档，清晰明确 |
-| 开发流程 | 直接编码，后期问题多 | 先规范后实现，减少返工 |
-| 测试覆盖 | 后期补充，覆盖率低 | 强制 TDD，测试先行 |
-| 文档维护 | 文档与代码脱节 | 规范与实现同步 |
-| 团队协作 | 依赖个人理解 | 基于统一规范 |
+1. ✅ **强制汉化**：所有面向用户的交互界面
+2. ⚠️ **选择汉化**：可能影响功能的技术标识保持英文
+3. 🔍 **质量保证**：每次修改后验证功能正常
 
----
-
-## 🌟 特色功能
-
-### 1. 开头一句话用途说明
-每个命令文档都以简洁的方式告诉您它的用途：
-
-```markdown
-## 📋 命令用途
-
-**将功能需求转化为清晰的规范文档**
-```
-
-### 2. 快速参考表
-查看 [命令快速参考.md](./命令快速参考.md) 获取：
-- 所有命令总览
-- 使用时机说明
-- 完整工作流示例
-- 使用技巧
+详见 [项目宪章](.specify/memory/constitution.md)
 
 ---
 
-## 📋 系统要求
+## 🤝 使用场景
 
-- **Python**: 3.11+
-- **包管理器**: uv
-- **AI 工具**: Cursor（推荐）或其他兼容工具
-- **Git**: 版本控制
+### 💼 适用项目
 
----
+- ✅ 需要规范化开发流程的团队项目
+- ✅ 要求文档化的企业级应用
+- ✅ 多人协作的复杂功能开发
+- ✅ AI 辅助的敏捷开发
 
-## 🤝 贡献
+### 👥 适用人群
 
-欢迎提交 Issue 和 Pull Request！
-
-如果您发现翻译不准确或有改进建议，请：
-1. Fork 本仓库
-2. 创建您的特性分支
-3. 提交更改
-4. 发起 Pull Request
-
----
-
-## 📄 许可证
-
-本项目基于原 [github/spec-kit](https://github.com/github/spec-kit) 项目。
-
-汉化工作遵循原项目的许可证。
+- 🎯 需要结构化开发流程的**项目经理**
+- 💻 希望提高代码质量的**开发工程师**
+- 📝 关注文档完整性的**技术写作者**
+- 🤖 使用 AI 工具的**独立开发者**
 
 ---
 
 ## 🔗 相关链接
 
-- [Spec-Kit 原项目](https://github.com/github/spec-kit)
-- [Cursor 官网](https://cursor.sh)
-- [uv 包管理器](https://github.com/astral-sh/uv)
+- 📦 **原版项目**: [github/spec-kit](https://github.com/github/spec-kit)
+- 🤖 **Cursor 编辑器**: [cursor.sh](https://cursor.sh)
+- 📖 **Spec-Kit 博客**: [Spec-Kit 使用指南](https://blog.chensoul.cc/posts/2025/09/29/spec-kit-with-cursor/)
+- 🇨🇳 **汉化版仓库**: [spec-kit-chinese](https://github.com/888888888881/spec-kit-chinese)
 
 ---
 
-## ⭐ 如果有帮助，请给个 Star！
+## 📄 开源许可
 
-如果这个汉化版本对您有帮助，请点击右上角的 ⭐ Star 支持我们！
+本项目基于 **MIT License** 开源，详见 [LICENSE](./LICENSE) 文件。
 
 ---
 
-**开始使用 Spec-Kit 中文版，体验规范驱动开发的强大威力！** 🚀
+## ❓ 常见问题
+
+<details>
+<summary><b>Q: 为什么命令名不是中文？</b></summary>
+
+A: 为了确保 AI 工具的稳定性和跨平台兼容性，命令触发关键字保持英文。所有用户可见的描述和文档内容均已汉化。
+</details>
+
+<details>
+<summary><b>Q: 如何在新项目中使用？</b></summary>
+
+A: 有两种方式：
+1. 使用 GitHub 模板创建新仓库（推荐）
+2. 直接克隆后在项目目录执行 `specify init`
+</details>
+
+<details>
+<summary><b>Q: 汉化会影响工具功能吗？</b></summary>
+
+A: 不会。我们只汉化了面向用户的交互内容，核心逻辑和技术标识保持原样，确保工具稳定运行。
+</details>
+
+<details>
+<summary><b>Q: 是否支持其他 AI 编辑器？</b></summary>
+
+A: 目前主要支持 Cursor。理论上支持其他兼容 Spec-Kit 的 AI 工具，但未经充分测试。
+</details>
+
+---
+
+<div align="center">
+
+### 🎉 开始你的规范驱动开发之旅！
+
+**[⬆️ 返回顶部](#-spec-kit-中文汉化版)**
+
+---
+
+Made with ❤️ by Chinese Developers | 基于 [GitHub Spec-Kit](https://github.com/github/spec-kit)
+
+</div>
